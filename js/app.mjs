@@ -9,6 +9,7 @@ import {
   deleteAll
 } from './generate-images.mjs';
 import { setInkColor, toggleDrawCanvas } from './utils/draw.mjs';
+const server = 'http://localhost:5000/';
 
 /**
  *
@@ -33,6 +34,20 @@ const setTextareaStyle = (attrib, v) => (pageEl.style[attrib] = v);
  * Add event listeners here, they will be automatically mapped with addEventListener later
  */
 const EVENT_MAP = {
+  '#generate-text': {
+    on: 'click',
+    action: async (e) => {
+      console.log('Hi');
+      const prompt = document.getElementById('prompt').value;
+      console.log(prompt);
+      try {
+        const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  },
   '#generate-image-form': {
     on: 'submit',
     action: (e) => {

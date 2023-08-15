@@ -120,7 +120,26 @@
             src="images/moon.svg"
         /></span>
       </button>
-      <h1>Text to Handwriting</h1>
+      <h1>ProseMindAI 🤖✍️</h1>
+      <h4>
+        Welcome to ProseMindAI your go to tool for generating Handwritten
+        Assigments! <a href="#usage">How to use?</a>
+      </h4>
+      <section class="gpt-section">
+        <input
+          type="text"
+          id="prompt"
+          placeholder="Please enter your prompt here"
+        />
+        <br />
+        <select name="open-ai-model" id="ai-model">
+          <option selected value="gpt-3.5-turbo">
+            GPT 3.5 turbo
+          </option>
+        </select>
+        <br />
+        <button id="generate-text">Generate!</button>
+      </section>
       <section class="generate-image-section">
         <br /><br />
         <form id="generate-image-form">
@@ -412,7 +431,7 @@
         </div>
       </section>
 
-      <section id="how-to-add-handwriting">
+      <section id="usage">
         <h2>🤓 Guide to add your own handwriting</h2>
         <div>
           <ul>
@@ -610,6 +629,7 @@
       src="./js/vendors/html2canvas.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="js/app.mjs"></script>
     <script defer src="https://unpkg.com/jspdf@^1/dist/jspdf.min.js"></script>
     <script>
@@ -658,6 +678,17 @@
           }
         });
       });
+      // async function generateText() {
+      //   console.log('Hi');
+      //   const prompt = document.getElementById('prompt').value;
+      //   console.log(prompt);
+      //   try {
+      //     res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      //     console.log(res);
+      //   } catch (err) {
+      //     console.log(err);
+      //   }
+      // }
     </script>
   </body>
 </html>
